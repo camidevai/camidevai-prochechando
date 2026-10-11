@@ -77,7 +77,7 @@ export default function CamiLanding() {
             <div className="cam-visual__ring" aria-hidden="true" />
             <div className="cam-visual__photo">
               <img
-                src={import.meta.env.BASE_URL + 'socios/camila.png'}
+                src={import.meta.env.BASE_URL + 'socios/camila-profesional.jpg'}
                 alt="Camila Bañares, creadora de contenido CamiDevAI"
                 decoding="async"
                 fetchPriority="high"

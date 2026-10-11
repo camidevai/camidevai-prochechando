@@ -3,7 +3,7 @@ import './Team.css'
 const MEMBERS = [
   {
     id: 1,
-    photo: '/socios/camila.png',
+    photo: '/socios/camila-profesional.jpg',
     icon: 'spark',
     name: 'Camila Bañares',
     role: 'Cofundadora y CMO · Informatik-AI',
@@ -11,7 +11,7 @@ const MEMBERS = [
   },
   {
     id: 2,
-    photo: '/socios/jorge.png',
+    photo: '/socios/jorge-profesional.jpg',
     icon: 'cpu',
     name: 'Jorge Salgado',
     role: 'Cofundador y CTO · Informatik-AI',
@@ -19,7 +19,7 @@ const MEMBERS = [
   },
   {
     id: 3,
-    photo: '/socios/gonzalo.png',
+    photo: '/socios/gonzalo-profesional.jpg',
     icon: 'chart',
     name: 'Gonzalo Figueroa',
     role: 'Cofundador y COO · Informatik-AI',
