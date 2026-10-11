@@ -80,7 +80,7 @@ function Card({ m }) {
   return (
     <article className="team-card">
       <div className="team-avatar">
-        <img src={m.photo} alt={m.name} />
+        <img src={`${import.meta.env.BASE_URL}${m.photo.slice(1)}`} alt={m.name} />
         <span className="team-badge"><Icon name={m.icon} /></span>
       </div>
       <strong className="team-name">{m.name}</strong>
