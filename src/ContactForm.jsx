@@ -37,7 +37,7 @@ const PERKS = [
   { icon: 'clock',  title: 'Respuesta rápida',  text: 'Menos de 24 horas' },
   { icon: 'shield', title: 'Confidencialidad',  text: 'Tu información está segura con nosotros' },
   { icon: 'users',  title: 'Asesoría experta',  text: 'Te ayudamos a encontrar la mejor solución' },
-  { icon: 'check',  title: 'Sin compromiso',    text: 'Conversación inicial totalmente gratuita' },
+  { icon: 'check',  title: 'Sin compromiso',    text: 'Escríbenos tu consulta sin costo' },
 ]
 
 const FOOTER = [

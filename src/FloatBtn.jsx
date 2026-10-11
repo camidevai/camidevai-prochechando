@@ -21,7 +21,7 @@ export default function FloatBtn() {
       {/* Mini-menú expandido */}
       <div className={`fab-menu ${open ? 'fab-menu--open' : ''}`} aria-hidden={!open}>
         <a
-          href="https://calendar.app.google/Audo1ET8DUJypjPN9"
+          href="https://calendly.com/camidevai/consulta-de-proyectos-informatik-ai-usd-20"
           target="_blank"
           rel="noopener noreferrer"
           className="fab-item fab-item--blue"
@@ -30,12 +30,12 @@ export default function FloatBtn() {
         >
           <span className="fab-item-icon">💻</span>
           <span className="fab-item-body">
-            <strong>Desarrollo / Servicios</strong>
+            <strong>Consulta de proyectos · US$20</strong>
           </span>
         </a>
 
         <a
-          href="https://calendar.app.google/Audo1ET8DUJypjPN9"
+          href="https://calendar.app.google/ZV6dGDV6JYxfs5sZ7"
           target="_blank"
           rel="noopener noreferrer"
           className="fab-item fab-item--cyan"
@@ -44,7 +44,7 @@ export default function FloatBtn() {
         >
           <span className="fab-item-icon">🤝</span>
           <span className="fab-item-body">
-            <strong>Alianza estratégica</strong>
+            <strong>Reunión con CamiDevAI</strong>
           </span>
         </a>
       </div>

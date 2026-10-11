@@ -106,3 +106,9 @@
   }
 }
 
+
+/* Diseño centrado para CCHIA */
+.ali-grid { display: flex; justify-content: center; }
+.ali-card { width: min(100%, 300px); min-height: 145px; }
+.ali-logo { height: 76px; }
+.ali-name { font-size: 0.86rem; }

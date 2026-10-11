@@ -1,46 +1,15 @@
 import './Team.css'
 
 const MEMBERS = [
-  {
-    id: 1, photo: '/socios/edison.png', icon: 'crown',
-    name: 'Edison Vásquez', role: 'CEO & Fundador',
-    bio: 'Fundador y guía estratégico. Traza el rumbo en el despliegue de tecnología de frontera, consolidando un ecosistema de IA sin límites geográficos.',
-  },
-  {
-    id: 2, photo: '/socios/julio.png', icon: 'gear',
-    name: 'Julio Hofflinger', role: 'Director de Operaciones',
-    bio: 'Integra ingeniería y tecnologías de vanguardia para potenciar la eficiencia. Su liderazgo en Computer Vision e IA asegura innovación robusta y responsable.',
-  },
-  {
-    id: 3, photo: '/socios/ignacio.png', icon: 'mega',
-    name: 'Ignacio Rojas', role: 'Director de Marketing',
-    bio: 'Traduce las capacidades del equipo en herramientas que impulsan el crecimiento. Su experiencia en marketing e IA alinea la técnica con el impacto comercial.',
-  },
-  {
-    id: 4, photo: '/socios/pablo.png', icon: 'briefcase',
-    name: 'Pablo Troncoso', role: 'Director Comercial',
-    bio: 'Estratega comercial con amplio recorrido en alta dirección e innovación. Aplica su experiencia en modelos de negocio y transformación digital.',
-  },
-  {
-    id: 5, photo: '/socios/hector.png', icon: 'code',
-    name: 'Héctor Vásquez', role: 'Director de Desarrollo',
-    bio: 'Arquitecto detrás de las automatizaciones y el despliegue de sistemas de IA. Se especializa en entrenamiento de modelos de computer vision.',
-  },
-  {
-    id: 6, photo: '/socios/jorge.png', icon: 'cpu',
-    name: 'Jorge Salgado', role: 'AI Architect · Transferencia de Conocimiento',
-    bio: 'Conecta tecnología, educación e implementación estratégica. Transforma conceptos complejos de IA en soluciones aplicables y escalables.',
-  },
-  {
-    id: 7, photo: '/socios/gonzalo.png', icon: 'chart',
-    name: 'Gonzalo Figueroa', role: 'AI Solutions Consultant',
-    bio: 'Acompaña a organizaciones en la adopción práctica de IA para mejorar eficiencia y toma de decisiones, traduciendo la innovación en procesos inteligentes.',
-  },
-  {
-    id: 8, photo: '/socios/camila.png', icon: 'spark',
-    name: 'Camila Bañares', role: 'Ing. Informática · Vicepresidenta CCHIA',
-    bio: 'Acerca la IA a miles de personas de forma práctica. A través de Informatik-AI y CamiDevAI combina educación, innovación y comunicación estratégica.',
-  },
+  { id: 1, photo: '/socios/camila.jpg', icon: 'spark',
+    name: 'Camila Bañares', role: 'CMO en Informatik-AI · Vicepresidenta CCHIA',
+    bio: 'Ingeniera en Informática, creadora y educadora en IA (@CamiDevAI), speaker y embajadora de HeyGen y APOB.' },
+  { id: 2, photo: '/socios/jorge.jpg', icon: 'cpu',
+    name: 'Jorge Salgado', role: 'Consultor Senior en SII Group Chile · AI Architect',
+    bio: 'Managing Director de Transferencia de Conocimiento, Tecnología y Educación en CCHIA.' },
+  { id: 3, photo: '/socios/gonzalo.jpg', icon: 'chart',
+    name: 'Gonzalo Figueroa', role: 'Administrador de sistemas en Aguas Nuevas S.A.',
+    bio: '' },
 ]
 
 const VALUES = [
@@ -80,17 +49,19 @@ function Card({ m }) {
   return (
     <article className="team-card">
       <div className="team-avatar">
-        <img src={`${import.meta.env.BASE_URL}${m.photo.slice(1)}`} alt={m.name} />
+        <img
+          src={`${import.meta.env.BASE_URL}${m.photo.slice(1)}`}
+          alt={m.name}
+          onError={(e) => {
+            e.currentTarget.onerror = null
+            e.currentTarget.src = `${import.meta.env.BASE_URL}socios/${m.photo.split('/').pop().replace('.jpg', '.png')}`
+          }}
+        />
         <span className="team-badge"><Icon name={m.icon} /></span>
       </div>
       <strong className="team-name">{m.name}</strong>
       <span className="team-role">{m.role}</span>
-      <p className="team-bio">{m.bio}</p>
-      <div className="team-socials">
-        <a className="team-social" href={m.linkedin || '#'} aria-label={`LinkedIn de ${m.name}`}><Icon name="linkedin" /></a>
-        <a className="team-social" href={m.mail || '#'} aria-label={`Email de ${m.name}`}><Icon name="mail" /></a>
-        <a className="team-social" href={m.twitter || '#'} aria-label={`Twitter de ${m.name}`}><Icon name="twitter" /></a>
-      </div>
+      {m.bio && <p className="team-bio">{m.bio}</p>}
     </article>
   )
 }
@@ -102,7 +73,7 @@ export default function Team() {
         <header className="s-header">
           <span className="s-kicker"><Icon name="users" /> Quiénes somos</span>
           <h2 className="s-title">El <span className="team-hl">equipo</span> detrás de las soluciones</h2>
-          <p className="team-sub">Profesionales apasionados por la tecnología, la innovación y el impacto real.</p>
+          <p className="team-sub">Tres profesionales que conectan tecnología, inteligencia artificial y resultados reales.</p>
         </header>
 
         <div className="team-grid">

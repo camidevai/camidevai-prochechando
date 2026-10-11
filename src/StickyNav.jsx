@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { label: 'Servicios',         id: 'servicios' },
   { label: 'Proceso',           id: 'proceso'   },
   { label: 'Por qué elegirnos', id: 'elegirnos' },
-  { label: 'Recursos',          id: 'alianzas', caret: true },
+  { label: 'CCHIA',             id: 'alianzas' },
   { label: 'Herramientas',      to: '/herramientas' },
   { label: 'Contacto',          id: 'contacto'  },
 ]

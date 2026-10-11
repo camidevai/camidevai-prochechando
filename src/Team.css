@@ -19,7 +19,7 @@
 /* ── Grilla ── */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
   margin-top: 44px;
 }
@@ -58,7 +58,7 @@
 /* ── Avatar con anillo + badge ── */
 .team-avatar {
   position: relative;
-  width: 104px; height: 104px;
+  width: 148px; height: 148px;
   margin-bottom: 16px;
   border-radius: 50%;
   padding: 4px;
@@ -94,8 +94,8 @@
 .team-role {
   margin-top: 5px;
   font-family: 'Poppins', sans-serif;
-  font-size: 0.66rem; font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase;
+  font-size: 0.78rem; font-weight: 650;
+  letter-spacing: 0.01em; text-transform: none;
   color: var(--brand);
 }
 .team-bio {

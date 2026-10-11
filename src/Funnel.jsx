@@ -12,15 +12,15 @@ export default function Funnel() {
         </header>
         <div className="funnel-cards">
           <a
-            href="https://calendar.app.google/Audo1ET8DUJypjPN9"
+            href="https://calendar.app.google/ZV6dGDV6JYxfs5sZ7"
             target="_blank"
             rel="noopener noreferrer"
             className="funnel-card funnel-card--alianza"
           >
-            <div className="funnel-card-badge">Partnership</div>
-            <strong className="funnel-card-title">Alianza estratégica</strong>
-            <p className="funnel-card-desc">Para empresas que quieren colaborar, co-crear o desarrollar una propuesta conjunta.</p>
-            <span className="funnel-card-cta">Explorar alianza →</span>
+            <div className="funnel-card-badge">Reunión general</div>
+            <strong className="funnel-card-title">Reuniones con CamiDevAI</strong>
+            <p className="funnel-card-desc">Para conversar sobre colaboraciones, charlas y otras iniciativas.</p>
+            <span className="funnel-card-cta">Agendar reunión →</span>
           </a>
 
           <div className="funnel-center" aria-hidden="true">
@@ -28,18 +28,18 @@ export default function Funnel() {
           </div>
 
           <a
-            href="https://calendar.app.google/Audo1ET8DUJypjPN9"
+            href="https://calendly.com/camidevai/consulta-de-proyectos-informatik-ai-usd-20"
             target="_blank"
             rel="noopener noreferrer"
             className="funnel-card funnel-card--desarrollo"
           >
-            <div className="funnel-card-badge funnel-card-badge--blue">Desarrollo</div>
-            <strong className="funnel-card-title">Construir juntos</strong>
-            <p className="funnel-card-desc">Para quienes necesitan software, automatización, agentes IA o una plataforma a medida.</p>
-            <span className="funnel-card-cta funnel-card-cta--blue">Agendar desarrollo →</span>
+            <div className="funnel-card-badge funnel-card-badge--blue">Proyectos · US$20</div>
+            <strong className="funnel-card-title">Consulta de proyectos Informatik-AI</strong>
+            <p className="funnel-card-desc">Agenda una consulta de proyectos por US$20 para hablar de IA, automatización o desarrollo a medida.</p>
+            <span className="funnel-card-cta funnel-card-cta--blue">Reservar consulta →</span>
           </a>
         </div>
-        <p className="funnel-note">30 minutos · Sin formularios · Una conversación honesta</p>
+        <p className="funnel-note">Elige la agenda según tu necesidad. La consulta de proyectos cuesta US$20.</p>
       </div>
     </section>
   )
