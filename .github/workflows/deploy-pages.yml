@@ -2,7 +2,7 @@ name: Deploy Prochechando to GitHub Pages
 
 on:
   push:
-    branches: [master]
+    branches: [prochechando.ai]
   workflow_dispatch:
 
 permissions:
@@ -18,7 +18,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     environment:
-      name: prochechando-pages
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
