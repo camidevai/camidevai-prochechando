@@ -120,7 +120,7 @@ export default function ContactForm() {
       setStatus('success')
       setFields(INITIAL)
     } catch (err) {
-      console.error('EmailJS error:', err)
+      console.error('EmailJS error:', { status: err?.status, detail: err?.text, error: err })
       setStatus('error')
     }
   }
@@ -276,7 +276,11 @@ export default function ContactForm() {
               </div>
 
               {status === 'error' && (
-                <p className="cf-error">Hubo un error al enviar. Intenta de nuevo o escríbenos directamente.</p>
+                <div className="cf-error" role="alert">
+                  <strong>No se pudo enviar tu mensaje.</strong>
+                  <p>Estamos revisando el servicio de correo. Tus datos siguen en el formulario, así que puedes intentar más tarde o agendar directamente una conversación.</p>
+                  <a href="https://calendar.app.google/ZV6dGDV6JYxfs5sZ7" target="_blank" rel="noopener noreferrer">Agendar reunión con CamiDevAI →</a>
+                </div>
               )}
 
               <button type="submit" className="cf-btn cf-btn--submit" disabled={status === 'sending'}>

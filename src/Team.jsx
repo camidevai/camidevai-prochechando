@@ -3,7 +3,7 @@ import './Team.css'
 const MEMBERS = [
   {
     id: 1,
-    photo: '/socios/camila.jpg',
+    photo: '/socios/camila.png',
     icon: 'spark',
     name: 'Camila Bañares',
     role: 'Cofundadora y CMO · Informatik-AI',
@@ -11,7 +11,7 @@ const MEMBERS = [
   },
   {
     id: 2,
-    photo: '/socios/jorge.jpg',
+    photo: '/socios/jorge.png',
     icon: 'cpu',
     name: 'Jorge Salgado',
     role: 'Cofundador y CTO · Informatik-AI',
@@ -19,7 +19,7 @@ const MEMBERS = [
   },
   {
     id: 3,
-    photo: '/socios/gonzalo.jpg',
+    photo: '/socios/gonzalo.png',
     icon: 'chart',
     name: 'Gonzalo Figueroa',
     role: 'Cofundador y COO · Informatik-AI',
@@ -67,10 +67,6 @@ function Card({ m }) {
         <img
           src={`${import.meta.env.BASE_URL}${m.photo.slice(1)}`}
           alt={m.name}
-          onError={(e) => {
-            e.currentTarget.onerror = null
-            e.currentTarget.src = `${import.meta.env.BASE_URL}socios/${m.photo.split('/').pop().replace('.jpg', '.png')}`
-          }}
         />
         <span className="team-badge"><Icon name={m.icon} /></span>
       </div>
