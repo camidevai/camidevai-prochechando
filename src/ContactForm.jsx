@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
+import emailjsConfig from './emailjsConfig'
 import './ContactForm.css'
 
 const SERVICES_OPTIONS = [
@@ -100,18 +101,21 @@ export default function ContactForm() {
     setStatus('sending')
     try {
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
         {
-          user_name:  fields.user_name,
-          user_email: fields.user_email,
-          phone:      fields.phone,
-          company:    fields.company,
-          services:   fields.services,
-          budget:     fields.budget,
-          message:    fields.message,
+          user_name: fields.user_name.trim(),
+          user_email: fields.user_email.trim(),
+          phone: fields.phone.trim(),
+          company: fields.company.trim(),
+          services: fields.services,
+          budget: fields.budget,
+          message: fields.message.trim(),
         },
-        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY },
+        {
+          publicKey: emailjsConfig.publicKey,
+          limitRate: { throttle: 10000 },
+        },
       )
       setStatus('success')
       setFields(INITIAL)
