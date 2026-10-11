@@ -24,7 +24,6 @@ function Icon({ name }) {
 }
 
 export default function Servicios() {
-  const handleCta = () => window.dispatchEvent(new CustomEvent('goto:contacto'))
   return (
     <section className="s-section">
       <div className="s-container">
@@ -49,11 +48,11 @@ export default function Servicios() {
               <em className="svc-sub">{s.sub}</em>
               <p className="svc-desc">{s.desc}</p>
 
-              <button className="svc-cta" onClick={handleCta}>
+              <a className="svc-cta" href="https://calendly.com/camidevai/consulta-de-proyectos-informatik-ai-usd-20" target="_blank" rel="noopener noreferrer">
                 <Icon name="cal" />
-                Agendar
+                Consulta · US$20
                 <span className="svc-cta__arrow">→</span>
-              </button>
+              </a>
             </article>
           ))}
         </div>

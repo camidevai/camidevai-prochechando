@@ -170,6 +170,16 @@
 }
 
 .snav-drawer-link:hover { color: #6c3dff; }
+.snav-drawer-link { color: #241a46; border-bottom-color: rgba(108,61,255,.09); }
+@media (max-width: 1170px) and (min-width: 769px) {
+  .snav-inner { gap: 10px; padding-inline: 14px; }
+  .snav-link { padding-inline: 7px; font-size: .72rem; }
+  .snav-cta { padding-inline: 13px; letter-spacing: 0; }
+}
+@media (max-width: 960px) and (min-width: 769px) {
+  .snav-links { gap: 0; }
+  .snav-link { padding-inline: 5px; font-size: .68rem; }
+}
 
 .snav-drawer-cta {
   margin-top: 8px;

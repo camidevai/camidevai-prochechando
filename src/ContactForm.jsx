@@ -4,6 +4,10 @@ import emailjsConfig from './emailjsConfig'
 import './ContactForm.css'
 
 const SERVICES_OPTIONS = [
+  'Charlas y conferencias de IA',
+  'Capacitaciones y cursos de IA',
+  'Videos para marcas y lugares',
+  'Colaboraciones de contenido',
   'Agentes IA',
   'Automatización de procesos',
   'Computer Vision',
@@ -32,17 +36,17 @@ const INITIAL = {
   message: '',
 }
 
-const MIN_MSG = 50
+const MIN_MSG = 20
 
 const PERKS = [
-  { icon: 'clock',  title: 'Respuesta rápida',  text: 'Menos de 24 horas' },
+  { icon: 'clock',  title: 'Atención personalizada',  text: 'Revisamos cada propuesta' },
   { icon: 'shield', title: 'Confidencialidad',  text: 'Tu información está segura con nosotros' },
   { icon: 'users',  title: 'Asesoría experta',  text: 'Te ayudamos a encontrar la mejor solución' },
   { icon: 'check',  title: 'Sin compromiso',    text: 'Escríbenos tu consulta sin costo' },
 ]
 
 const FOOTER = [
-  { icon: 'clock',  t: 'Respuesta < 24h' },
+  { icon: 'clock',  t: 'Contacto directo' },
   { icon: 'shield', t: '100% confidencial' },
   { icon: 'users',  t: 'Sin compromiso' },
 ]
@@ -86,10 +90,7 @@ export default function ContactForm() {
     const e = {}
     if (!fields.user_name.trim())                        e.user_name  = 'El nombre es obligatorio'
     if (!fields.user_email.trim())                       e.user_email = 'El email es obligatorio'
-    if (!fields.phone.trim())                            e.phone      = 'El teléfono es obligatorio'
-    if (!fields.company.trim())                          e.company    = 'La empresa es obligatoria'
     if (!fields.services)                                e.services   = 'Selecciona un servicio'
-    if (!fields.budget)                                  e.budget     = 'Selecciona un presupuesto'
     if (fields.message.trim().length < MIN_MSG)          e.message    = `Mínimo ${MIN_MSG} caracteres (faltan ${Math.max(0, MIN_MSG - fields.message.trim().length)})`
     return e
   }
@@ -106,10 +107,10 @@ export default function ContactForm() {
         {
           user_name: fields.user_name.trim(),
           user_email: fields.user_email.trim(),
-          phone: fields.phone.trim(),
-          company: fields.company.trim(),
+          phone: fields.phone.trim() || 'No indicado',
+          company: fields.company.trim() || 'No indicado',
           services: fields.services,
-          budget: fields.budget,
+          budget: fields.budget || 'Por definir',
           message: fields.message.trim(),
         },
         {
@@ -120,7 +121,7 @@ export default function ContactForm() {
       setStatus('success')
       setFields(INITIAL)
     } catch (err) {
-      console.error('EmailJS error:', { status: err?.status, detail: err?.text, error: err })
+      console.error('EmailJS error:', err)
       setStatus('error')
     }
   }
@@ -137,7 +138,7 @@ export default function ContactForm() {
           <span className="s-kicker cf-kicker"><Icon name="chat" />Hablemos</span>
           <h2 className="cf-title">Cuéntanos tu <span className="cf-hl">proyecto</span></h2>
           <p className="cf-lead">
-            Responderemos en menos de <b>24 horas</b>
+            Te responderemos para <b>conversar sobre tu idea</b>
             <span className="cf-lead-bolt"><Icon name="bolt" /></span>
           </p>
 
@@ -207,7 +208,7 @@ export default function ContactForm() {
                 <div className="cf-field">
                   <span className="cf-field-ico"><Icon name="phone" /></span>
                   <div className="cf-field-main">
-                    <label htmlFor="cf-phone">Teléfono *</label>
+                    <label htmlFor="cf-phone">Teléfono (opcional)</label>
                     <input id="cf-phone" name="phone" type="tel" placeholder="+56 9 1234 5678"
                       value={fields.phone} onChange={e => set('phone', e.target.value)}
                       className={errors.phone ? 'cf-input--error' : ''} />
@@ -217,8 +218,8 @@ export default function ContactForm() {
                 <div className="cf-field">
                   <span className="cf-field-ico"><Icon name="briefcase" /></span>
                   <div className="cf-field-main">
-                    <label htmlFor="cf-company">Empresa *</label>
-                    <input id="cf-company" name="company" type="text" placeholder="Nombre de tu empresa"
+                    <label htmlFor="cf-company">Empresa (opcional)</label>
+                    <input id="cf-company" name="company" type="text" placeholder="Empresa o proyecto, si aplica"
                       value={fields.company} onChange={e => set('company', e.target.value)}
                       className={errors.company ? 'cf-input--error' : ''} />
                     {errors.company && <span className="cf-field-error">{errors.company}</span>}
@@ -243,7 +244,7 @@ export default function ContactForm() {
                 <div className="cf-field">
                   <span className="cf-field-ico"><Icon name="dollar" /></span>
                   <div className="cf-field-main">
-                    <label htmlFor="cf-budget">Presupuesto aproximado *</label>
+                    <label htmlFor="cf-budget">Presupuesto aproximado (opcional)</label>
                     <select id="cf-budget" name="budget"
                       value={fields.budget} onChange={e => set('budget', e.target.value)}
                       className={errors.budget ? 'cf-input--error' : ''}>
@@ -272,15 +273,11 @@ export default function ContactForm() {
 
               <div className="cf-privacy">
                 <Icon name="lock" />
-                <span><b>Tu información está protegida.</b> No compartimos tus datos con terceros.</span>
+                <span><b>Privacidad:</b> utilizamos los datos de este formulario para responder a tu consulta a través de nuestro servicio de correo.</span>
               </div>
 
               {status === 'error' && (
-                <div className="cf-error" role="alert">
-                  <strong>No se pudo enviar tu mensaje.</strong>
-                  <p>Estamos revisando el servicio de correo. Tus datos siguen en el formulario, así que puedes intentar más tarde o agendar directamente una conversación.</p>
-                  <a href="https://calendar.app.google/ZV6dGDV6JYxfs5sZ7" target="_blank" rel="noopener noreferrer">Agendar reunión con CamiDevAI →</a>
-                </div>
+                <p className="cf-error">Hubo un error al enviar. Intenta de nuevo o escríbenos directamente.</p>
               )}
 
               <button type="submit" className="cf-btn cf-btn--submit" disabled={status === 'sending'}>

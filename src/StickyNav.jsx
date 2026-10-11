@@ -4,13 +4,12 @@ import './StickyNav.css'
 import Prochi from './Prochi'
 
 const NAV_LINKS = [
-  { label: 'Equipo',            id: 'equipo'    },
-  { label: 'Servicios',         id: 'servicios' },
-  { label: 'Proceso',           id: 'proceso'   },
-  { label: 'Por qué elegirnos', id: 'elegirnos' },
-  { label: 'CCHIA',             id: 'alianzas' },
-  { label: 'Herramientas',      to: '/herramientas' },
-  { label: 'Contacto',          id: 'contacto'  },
+  { label: 'Inicio', id: 'inicio' },
+  { label: 'Charlas y cursos', id: 'colaboremos' },
+  { label: 'Informatik-AI', id: 'servicios' },
+  { label: 'Equipo', id: 'equipo' },
+  { label: 'Herramientas', to: '/herramientas' },
+  { label: 'Contacto', id: 'formulario' },
 ]
 
 const scrollTo = (id) =>
@@ -41,9 +40,9 @@ export default function StickyNav() {
       <div className="snav-inner">
 
         {/* Marca */}
-        <span className="snav-brand" onClick={() => scrollTo('equipo')}>
+        <span className="snav-brand" onClick={() => scrollTo('inicio')}>
           <Prochi size={26} animated={false} className="snav-brand__logo" />
-          PROCHECHANDO<b className="snav-brand-sep">.cl</b>
+          CamiDevAI<b className="snav-brand-sep">✦</b>
         </span>
 
         {/* Links desktop */}
@@ -57,10 +56,9 @@ export default function StickyNav() {
         </nav>
 
         {/* CTA desktop */}
-        <button className="snav-cta" onClick={() => scrollTo('contacto')}>
-          Agendar reunión
-          <CalIcon />
-        </button>
+        <a className="snav-cta" href="https://calendar.app.google/ZV6dGDV6JYxfs5sZ7" target="_blank" rel="noopener noreferrer">
+          Invítame a una charla <CalIcon />
+        </a>
 
         {/* Hamburguesa mobile */}
         <button
@@ -85,12 +83,15 @@ export default function StickyNav() {
               {l.label}
             </button>
           ))}
-          <button
+          <a
             className="snav-drawer-cta"
-            onClick={() => { scrollTo('contacto'); setMenuOpen(false) }}
+            href="https://calendar.app.google/ZV6dGDV6JYxfs5sZ7"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
           >
-            Agendar reunión →
-          </button>
+            Invítame a una charla →
+          </a>
         </div>
       )}
     </header>

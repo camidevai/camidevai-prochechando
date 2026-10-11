@@ -3,7 +3,7 @@ import './App.css'
 import './sections.css'
 import StickyNav from './StickyNav'
 import FloatBtn from './FloatBtn'
-import Hero from './Hero'
+import CamiLanding from './CamiLanding'
 import Servicios from './Servicios'
 import Proceso from './Proceso'
 import Elegirnos from './Elegirnos'
@@ -35,7 +35,7 @@ export default function App() {
       <FloatBtn />
 
       {/* ── Hero ── */}
-      <Hero />
+      <CamiLanding />
 
       {/* ── Contenido ── */}
       <div className="page-content">
@@ -74,7 +74,7 @@ export default function App() {
         </nav>
 
         <div className="site-footer__legal">
-          <span className="site-footer__copy">© 2025 prochechando.cl</span>
+          <span className="site-footer__copy">© 2026 CamiDevAI · Informatik-AI · Prochechando</span>
           <span className="site-footer__divider" />
           <button className="site-footer__link site-footer__link--legal" onClick={() => setLegalPage('terminos')}>Términos de uso</button>
           <button className="site-footer__link site-footer__link--legal" onClick={() => setLegalPage('privacidad')}>Política de privacidad</button>
