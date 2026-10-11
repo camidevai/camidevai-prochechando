@@ -12,7 +12,7 @@ const PARTNERS = [
   { id: 9,  logo: '/logos/Alianzas estratégicas/Tenpo.png',                              name: 'Tenpo' },
   { id: 10, logo: '/logos/Alianzas estratégicas/Logo_Color.png',                         name: 'Partner' },
   { id: 11, logo: '/logos/Alianzas estratégicas/apob_ai.png',                            name: 'APOB AI' },
-  { id: 12, logo: '/logos/Alianzas estratégicas/csiaa_logo.jfif',                        name: 'CSIAA' },
+  { id: 12, logo: '/logos/Alianzas estratégicas/csiaa_logo.png',                        name: 'CSIAA' },
   { id: 13, logo: '/logos/Alianzas estratégicas/logo vehice.png',                        name: 'Vehice' },
   { id: 14, logo: '/logos/Alianzas estratégicas/logo_Datamate-removebg-preview.png',     name: 'Datamate' },
   { id: 15, logo: '/logos/Alianzas estratégicas/logo_latam_gpt-removebg-preview.png',   name: 'Latam GPT' },
@@ -25,7 +25,7 @@ function PartnerCard({ p }) {
   return (
     <div className="ali-card" aria-label={p.name}>
       <div className={`ali-logo${p.dark ? ' ali-logo--dark' : ''}`}>
-        <img src={p.logo} alt={p.name} className="ali-logo-img" />
+        <img src={`${import.meta.env.BASE_URL}${p.logo.slice(1)}`} alt={p.name} className="ali-logo-img" />
       </div>
       <span className="ali-name">{p.name}</span>
     </div>
