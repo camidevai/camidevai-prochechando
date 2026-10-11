@@ -1,19 +1,34 @@
 import './Team.css'
 
 const MEMBERS = [
-  { id: 1, photo: '/socios/camila.jpg', icon: 'spark',
-    name: 'Camila Bañares', role: 'CMO en Informatik-AI · Vicepresidenta CCHIA',
-    bio: 'Ingeniera en Informática, creadora y educadora en IA (@CamiDevAI), speaker y embajadora de HeyGen y APOB.' },
-  { id: 2, photo: '/socios/jorge.jpg', icon: 'cpu',
-    name: 'Jorge Salgado', role: 'Consultor Senior en SII Group Chile · AI Architect',
-    bio: 'Managing Director de Transferencia de Conocimiento, Tecnología y Educación en CCHIA.' },
-  { id: 3, photo: '/socios/gonzalo.jpg', icon: 'chart',
-    name: 'Gonzalo Figueroa', role: 'Administrador de sistemas en Aguas Nuevas S.A.',
-    bio: '' },
+  {
+    id: 1,
+    photo: '/socios/camila.jpg',
+    icon: 'spark',
+    name: 'Camila Bañares',
+    role: 'Cofundadora y CMO · Informatik-AI',
+    bio: 'Lidera marketing, marca y comunicación. Ingeniera en Informática, vicepresidenta de CCHIA, creadora y educadora en IA (@CamiDevAI), speaker y embajadora de HeyGen y APOB.',
+  },
+  {
+    id: 2,
+    photo: '/socios/jorge.jpg',
+    icon: 'cpu',
+    name: 'Jorge Salgado',
+    role: 'Cofundador y CTO · Informatik-AI',
+    bio: 'Lidera tecnología, arquitectura e innovación. Consultor senior en SII Group Chile, AI Architect y Managing Director de Transferencia de Conocimiento, Tecnología y Educación en CCHIA.',
+  },
+  {
+    id: 3,
+    photo: '/socios/gonzalo.jpg',
+    icon: 'chart',
+    name: 'Gonzalo Figueroa',
+    role: 'Cofundador y COO · Informatik-AI',
+    bio: 'Lidera operaciones y gestión administrativa. Administrador de sistemas en Aguas Nuevas S.A.',
+  },
 ]
 
 const VALUES = [
-  { icon: 'users',  label: 'Un equipo diverso' },
+  { icon: 'users',  label: 'Liderazgo compartido' },
   { icon: 'star',   label: 'Pasión por la innovación' },
   { icon: 'target', label: 'Enfoque en resultados' },
   { icon: 'heart',  label: 'Compromiso real' },
@@ -72,8 +87,8 @@ export default function Team() {
       <div className="s-container">
         <header className="s-header">
           <span className="s-kicker"><Icon name="users" /> Quiénes somos</span>
-          <h2 className="s-title">El <span className="team-hl">equipo</span> detrás de las soluciones</h2>
-          <p className="team-sub">Tres profesionales que conectan tecnología, inteligencia artificial y resultados reales.</p>
+          <h2 className="s-title">El <span className="team-hl">equipo fundador</span> de Informatik-AI</h2>
+          <p className="team-sub">Tres cofundadores que lideran juntos la empresa, con responsabilidades complementarias en estrategia, tecnología, marketing y operaciones.</p>
         </header>
 
         <div className="team-grid">
