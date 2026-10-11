@@ -37,8 +37,9 @@ jobs:
         run: npm run build
         env:
           GITHUB_PAGES: 'true'
-          # Se pueden sobrescribir desde Settings > Secrets and variables > Actions > Variables.
-          VITE_EMAILJS_SERVICE_ID: ${{ vars.VITE_EMAILJS_SERVICE_ID }}
+          # Identificador público confirmado para este formulario. Evita valores antiguos en variables de Actions.
+          VITE_EMAILJS_SERVICE_ID: 'service_ez94wzj'
+          # La plantilla y la Public Key pueden sobrescribirse desde GitHub Actions.
           VITE_EMAILJS_TEMPLATE_ID: ${{ vars.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY: ${{ vars.VITE_EMAILJS_PUBLIC_KEY }}
 
