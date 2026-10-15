@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -58,6 +59,23 @@ jobs:
         with:
           name: github-pages-${{ github.run_attempt }}
           path: ./dist
+
+      # The repository also has legacy branch publishing enabled. Publish the
+      # compiled app after that build so raw JSX can never replace the live app.
+      - name: Wait for legacy branch deployment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            for (let attempt = 0; attempt < 40; attempt++) {
+              const { data } = await github.rest.actions.listWorkflowRunsForRepo({
+                ...context.repo, head_sha: context.sha, per_page: 30
+              });
+              const legacy = data.workflow_runs.find(run => run.name === 'pages build and deployment');
+              if (legacy?.status === 'completed') return;
+              if (!legacy && attempt >= 5) return;
+              await new Promise(resolve => setTimeout(resolve, 10000));
+            }
+            throw new Error('Legacy Pages deployment did not finish before publishing the compiled app.');
 
       - name: Publish to GitHub Pages
         id: deployment
