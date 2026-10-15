@@ -67,6 +67,9 @@ export default function CamiLanding() {
               <a className="cam-btn cam-btn--outline" href="#colaboremos">
                 Mira cómo podemos trabajar
               </a>
+              <a className="cam-btn cam-btn--outline" href="https://www.cchia.cl/" target="_blank" rel="noopener noreferrer">
+                Únete a la Cámara Chilena de IA <span aria-hidden="true">↗</span>
+              </a>
             </div>
             <div className="cam-hero__tags" aria-label="Áreas de trabajo">
               <span>Charlas</span><span>Capacitaciones</span><span>Contenido para marcas</span><span>Proyectos IA</span>
