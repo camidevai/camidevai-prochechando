@@ -48,7 +48,7 @@ export default function Servicios() {
               <em className="svc-sub">{s.sub}</em>
               <p className="svc-desc">{s.desc}</p>
 
-              <a className="svc-cta" href="https://calendly.com/camidevai/consulta-de-proyectos-informatik-ai-usd-20" target="_blank" rel="noopener noreferrer">
+              <a className="svc-cta" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2uz1JFoc9bKbUpVzeIlg9eFnUKXaBtydshlgQQDQPHMQzLc1I-vm4bvW6GK0zo-gGcH4spWo3l" target="_blank" rel="noopener noreferrer">
                 <Icon name="cal" />
                 Consulta · US$20
                 <span className="svc-cta__arrow">→</span>

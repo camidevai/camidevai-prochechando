@@ -28,7 +28,7 @@ export default function Funnel() {
           </div>
 
           <a
-            href="https://calendly.com/camidevai/consulta-de-proyectos-informatik-ai-usd-20"
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2uz1JFoc9bKbUpVzeIlg9eFnUKXaBtydshlgQQDQPHMQzLc1I-vm4bvW6GK0zo-gGcH4spWo3l"
             target="_blank"
             rel="noopener noreferrer"
             className="funnel-card funnel-card--desarrollo"

@@ -1,7 +1,7 @@
 import './CamiLanding.css'
 
 const GENERAL_MEETING = 'https://calendar.app.google/ZV6dGDV6JYxfs5sZ7'
-const PROJECT_CONSULTATION = 'https://calendly.com/camidevai/consulta-de-proyectos-informatik-ai-usd-20'
+const PROJECT_CONSULTATION = 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2uz1JFoc9bKbUpVzeIlg9eFnUKXaBtydshlgQQDQPHMQzLc1I-vm4bvW6GK0zo-gGcH4spWo3l'
 
 const offers = [
   {
