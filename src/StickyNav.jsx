@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: 'Informatik-AI', id: 'servicios' },
   { label: 'Equipo', id: 'equipo' },
   { label: 'Herramientas', to: '/herramientas' },
+  { label: 'Guías APOB', to: '/apob' },
   { label: 'Contacto', id: 'formulario' },
 ]
 

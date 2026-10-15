@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
+import ApobPage from './apob/ApobPage.jsx'
 import HerramientasPage from './herramientas/HerramientasPage.jsx'
 import ScrollToTop from './herramientas/ScrollToTop.jsx'
 
@@ -12,6 +13,7 @@ createRoot(document.getElementById('root')).render(
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/apob" element={<ApobPage />} />
         <Route path="/herramientas" element={<HerramientasPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

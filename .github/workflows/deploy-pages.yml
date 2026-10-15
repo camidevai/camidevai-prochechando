@@ -47,6 +47,8 @@ jobs:
         run: |
           touch dist/.nojekyll
           cp dist/index.html dist/404.html
+          mkdir -p dist/apob
+          cp dist/index.html dist/apob/index.html
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

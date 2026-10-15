@@ -34,6 +34,7 @@ export default function ToolsNav() {
         </Link>
 
         <nav className="snav-links" aria-label="Navegación de herramientas">
+          <Link to="/apob" className="snav-link">Guías APOB</Link>
           {SECTIONS.map((s) => (
             <button key={s.id} className="snav-link" onClick={() => scrollTo(s.id)}>
               {s.label}
@@ -58,6 +59,7 @@ export default function ToolsNav() {
 
       {menuOpen && (
         <div className="snav-drawer">
+          <Link to="/apob" className="snav-drawer-link" onClick={() => setMenuOpen(false)}>Guías APOB</Link>
           {SECTIONS.map((s) => (
             <button
               key={s.id}
