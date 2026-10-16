@@ -7,6 +7,7 @@ import './apob.css'
 const categories = ['Todas', 'Primeros pasos', 'Transformaciones', 'Cine e historias', 'Efectos y trends', 'Imagen y estilo', 'Publicidad y 3D']
 const normalize = (text) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 const asset = (path) => `${import.meta.env.BASE_URL}${path}`
+const coverAsset = (guide) => asset(`apob/${guide.id}.${guide.coverExt || 'webp'}`)
 const folder = 'https://drive.google.com/drive/folders/1DeTZjeO4HDFXhQj6th7mqZxr79yPNCmB'
 const dateLabel = (date) => new Intl.DateTimeFormat('es-CL', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(date))
 
@@ -14,7 +15,7 @@ function GuideCard({ guide, index }) {
   const [cover, setCover] = useState('local')
   return <article className="ap-guide">
     <a className="ap-guide-cover" href={guide.url} target="_blank" rel="noopener noreferrer" aria-label={`Abrir guía: ${guide.title}`}>
-      {cover !== 'fallback' ? <img src={cover === 'local' ? asset(`apob/${guide.id}.webp`) : `https://drive.google.com/thumbnail?id=${encodeURIComponent(guide.id)}&sz=w600`} alt={`Portada de ${guide.title}`} loading={index < 3 ? 'eager' : 'lazy'} width="600" height="850" onError={() => setCover(current => current === 'local' ? 'drive' : 'fallback')} /> : <span className="ap-cover-fallback">APOB<span>{guide.title}</span></span>}
+      {cover !== 'fallback' ? <img src={cover === 'local' ? coverAsset(guide) : `https://drive.google.com/thumbnail?id=${encodeURIComponent(guide.id)}&sz=w600`} alt={`Portada de ${guide.title}`} loading={index < 3 ? 'eager' : 'lazy'} width="600" height="850" onError={() => setCover(current => current === 'local' ? 'drive' : 'fallback')} /> : <span className="ap-cover-fallback">APOB<span>{guide.title}</span></span>}
       <span className="ap-pdf">PDF ↗</span>
       <span className="ap-cover-cta">Ver guía paso a paso ↗</span>
     </a>
@@ -25,6 +26,17 @@ function GuideCard({ guide, index }) {
       <div className="ap-card-bottom"><time dateTime={guide.date}>{dateLabel(guide.date)}</time><a href={guide.url} target="_blank" rel="noopener noreferrer" aria-label={`Leer ${guide.title}`}>Leer guía <span aria-hidden="true">↗</span></a></div>
     </div>
   </article>
+}
+
+function HeroCover({ guide, className }) {
+  const [failed, setFailed] = useState(false)
+  return failed
+    ? <div className={`${className} ap-hero-cover-fallback`}>
+        <span>GUÍA CREATIVA · APOB</span>
+        <strong>{guide.title}</strong>
+        <small>CAMIDEVAI ✦</small>
+      </div>
+    : <img className={className} src={coverAsset(guide)} alt="" onError={() => setFailed(true)} />
 }
 
 export default function ApobPage() {
@@ -43,7 +55,7 @@ export default function ApobPage() {
     <main>
       <section className="ap-hero">
         <div className="ap-hero-copy"><span className="ap-eyebrow"><span /> EL LABORATORIO CREATIVO DE CAMIDEVAI</span><h1>Tu próxima idea.<br />Un video <em>increíble.</em></h1><p>Te enseño cómo lo hice. Explora mis guías de APOB y crea tus propios videos con IA, paso a paso.</p><div className="ap-hero-actions"><a className="ap-button" href="#guias">Explorar las guías <span>↓</span></a><span className="ap-hero-note">{guides.length} guías PDF<br /><b>Ideas para poner en práctica</b></span></div><div className="ap-hero-meta"><span>01. Elige una idea</span><span>02. Sigue la guía</span><span>03. Dale tu estilo</span></div></div>
-        <div className="ap-hero-art" aria-hidden="true"><div className="ap-orbit" /><span className="ap-art-spark">✦</span><img className="ap-hero-cover ap-hero-cover-back" src={asset(`apob/${guides[1].id}.webp`)} alt="" /><img className="ap-hero-cover ap-hero-cover-front" src={asset(`apob/${guides[0].id}.webp`)} alt="" /><span className="ap-art-label">DE UNA IDEA A LA ACCIÓN <b>PROCHECHANDO ✦</b></span></div>
+        <div className="ap-hero-art" aria-hidden="true"><div className="ap-orbit" /><span className="ap-art-spark">✦</span><HeroCover className="ap-hero-cover ap-hero-cover-back" guide={guides[1]} /><HeroCover className="ap-hero-cover ap-hero-cover-front" guide={guides[0]} /><span className="ap-art-label">DE UNA IDEA A LA ACCIÓN <b>PROCHECHANDO ✦</b></span></div>
       </section>
       <section className="ap-library" id="guias" aria-labelledby="ap-library-title"><div className="ap-section-head"><div><span className="ap-eyebrow">APRENDE. EXPERIMENTA. CREA.</span><h2 id="ap-library-title">Encuentra tu próxima creación<span>✦</span></h2></div><a className="ap-drive-link" href={folder} target="_blank" rel="noopener noreferrer">Ver carpeta en Drive ↗</a></div>
         <div className="ap-toolbar"><div className="ap-search"><span aria-hidden="true">⌕</span><label className="ap-sr" htmlFor="ap-search">Buscar guías</label><input id="ap-search" type="search" value={query} onChange={e => update('q', e.target.value)} placeholder="Busca una idea: transformación, cine, 3D…" /></div><div className="ap-sort"><label htmlFor="ap-sort">Ordenar por</label><select id="ap-sort" value={sort} onChange={e => update('orden', e.target.value)}><option value="recientes">Más recientes</option><option value="antiguas">Más antiguas</option><option value="az">Título: A–Z</option></select></div></div>
