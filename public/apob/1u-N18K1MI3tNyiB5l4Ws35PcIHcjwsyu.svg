@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="850" viewBox="0 0 600 850" role="img" aria-label="Portada de la guía CamiDevAI en Hogwarts">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#140f31"/><stop offset=".58" stop-color="#452e84"/><stop offset="1" stop-color="#d77ed8"/></linearGradient><radialGradient id="moon"><stop stop-color="#fff4ce"/><stop offset="1" stop-color="#ffe9ab" stop-opacity="0"/></radialGradient><linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#402653"/><stop offset="1" stop-color="#1b122e"/></linearGradient></defs>
+<rect width="600" height="850" fill="url(#sky)"/><circle cx="445" cy="316" r="158" fill="url(#moon)" opacity=".65"/><circle cx="445" cy="316" r="73" fill="#ffedbc"/>
+<g fill="#fff5dc" opacity=".65"><circle cx="80" cy="297" r="3"/><circle cx="135" cy="366" r="2"/><circle cx="340" cy="270" r="3"/><circle cx="536" cy="426" r="2"/><circle cx="290" cy="359" r="2"/><path d="M311 168l6 16 16 6-16 6-6 16-6-16-16-6 16-6Z"/></g>
+<path d="M0 572Q165 468 292 553T600 532V850H0Z" fill="#31204e"/>
+<path d="M0 652Q160 572 318 622T600 595V850H0Z" fill="url(#hill)"/>
+<g fill="#201934" stroke="#453254" stroke-width="3"><rect x="220" y="428" width="242" height="215"/><rect x="265" y="375" width="45" height="258"/><path d="M257 376l31-75 30 75Z"/><rect x="361" y="320" width="50" height="310"/><path d="M352 320l34-98 34 98Z"/><rect x="445" y="407" width="37" height="229"/><path d="M437 407l26-73 27 73Z"/><rect x="190" y="472" width="38" height="170"/><path d="M181 472l28-76 27 76Z"/></g>
+<g fill="#f3c77c"><path d="M277 415h11v26h-11Zm20 0h10v26h-10Zm69-49h13v35h-13Zm23 0h10v35h-10Zm60 76h9v25h-9Zm20 0h8v25h-8Z"/><path d="M321 572h45v71h-45Z"/></g>
+<g transform="translate(54 590) rotate(-12 175 60)"><ellipse cx="175" cy="110" rx="173" ry="25" fill="#0e0b23" opacity=".6"/><path d="M16 54Q61 23 118 25L160 3H254L313 34Q340 35 351 60V90H18Z" fill="#77ded2" stroke="#c3fffa" stroke-width="5"/><path d="M120 25l44-17h89l46 22Z" fill="#231d3e"/><circle cx="88" cy="86" r="28" fill="#16152a" stroke="#91dace" stroke-width="8"/><circle cx="278" cy="86" r="28" fill="#16152a" stroke="#91dace" stroke-width="8"/></g>
+<rect x="37" y="38" width="238" height="36" rx="18" fill="#f64ea9"/>
+<text x="56" y="62" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#fff">CAMIDEVAI × APOB</text>
+<text x="39" y="151" font-family="Arial, sans-serif" font-size="52" font-weight="900" fill="#fff">UN VIAJE A</text>
+<text x="39" y="220" font-family="Arial, sans-serif" font-size="61" font-weight="900" fill="#ffd7f0">HOGWARTS</text>
+<text x="42" y="267" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#f7f1ff">MAGIA EN VIDEO CON IA</text>
+<rect x="40" y="744" width="520" height="57" rx="14" fill="#fff"/>
+<text x="300" y="768" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="800" fill="#53249a">7 ESCENAS CINEMATOGRÁFICAS</text>
+<text x="300" y="790" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#705786">Guía paso a paso · CamiDevAI</text>
+</svg>
