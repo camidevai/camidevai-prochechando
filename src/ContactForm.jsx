@@ -17,6 +17,17 @@ const SERVICES_OPTIONS = [
   'Otro',
 ]
 
+const APOB_SERVICES_OPTIONS = [
+  'Clases particulares de inteligencia artificial',
+  'Clases para crear videos con APOB',
+  'Charlas y conferencias de IA',
+  'Talleres y capacitaciones para equipos',
+  'Mentorías de contenido con IA',
+  'Colaboraciones con marcas',
+  'Asesoría para proyectos de IA',
+  'Otro',
+]
+
 const BUDGET_OPTIONS = [
   'Menos de $1.000 USD',
   '$1.000 – $5.000 USD',
@@ -76,7 +87,9 @@ function Icon({ name }) {
   )
 }
 
-export default function ContactForm() {
+export default function ContactForm({ variant = 'general' }) {
+  const isApob = variant === 'apob'
+  const serviceOptions = isApob ? APOB_SERVICES_OPTIONS : SERVICES_OPTIONS
   const [fields, setFields] = useState(INITIAL)
   const [status, setStatus] = useState('idle') // idle | sending | success | error
   const [errors, setErrors] = useState({})
@@ -111,7 +124,10 @@ export default function ContactForm() {
           company: fields.company.trim() || 'No indicado',
           services: fields.services,
           budget: fields.budget || 'Por definir',
-          message: fields.message.trim(),
+          message: isApob
+            ? '[Consulta desde Guías APOB de CamiDevAI] - ' + fields.message.trim()
+            : fields.message.trim(),
+          source: isApob ? 'Guías APOB' : 'Sitio principal',
         },
         {
           publicKey: emailjsConfig.publicKey,
@@ -127,7 +143,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="s-section cf-section" id="formulario">
+    <section className={`s-section cf-section ${isApob ? 'cf-section--apob' : ''}`} id={isApob ? 'contacto-apob' : 'formulario'}>
       <div className="cf-glow" aria-hidden="true" />
       <div className="cf-dots cf-dots--tr" aria-hidden="true" />
       <div className="cf-dots cf-dots--bl" aria-hidden="true" />
@@ -135,10 +151,10 @@ export default function ContactForm() {
       <div className="s-container cf-layout">
         {/* ── Columna izquierda ── */}
         <aside className="cf-aside">
-          <span className="s-kicker cf-kicker"><Icon name="chat" />Hablemos</span>
-          <h2 className="cf-title">Cuéntanos tu <span className="cf-hl">proyecto</span></h2>
+          <span className="s-kicker cf-kicker"><Icon name="chat" />{isApob ? 'CLASES · CHARLAS · COLABORACIONES' : 'Hablemos'}</span>
+          <h2 className="cf-title">{isApob ? <>Hagamos algo <span className="cf-hl">increíble</span></> : <>Cuéntanos tu <span className="cf-hl">proyecto</span></>}</h2>
           <p className="cf-lead">
-            Te responderemos para <b>conversar sobre tu idea</b>
+            {isApob ? <>¿Buscas clases, una charla o un taller? <b>Cuéntame tu idea y conversemos.</b></> : <>Te responderemos para <b>conversar sobre tu idea</b></>}
             <span className="cf-lead-bolt"><Icon name="bolt" /></span>
           </p>
 
@@ -176,7 +192,7 @@ export default function ContactForm() {
             <div className="cf-success">
               <span className="cf-success__icon"><Icon name="check" /></span>
               <strong>¡Mensaje enviado!</strong>
-              <p>Nos pondremos en contacto contigo pronto.</p>
+              <p>{isApob ? '¡Gracias por escribir! Revisaré tu consulta y te responderé.' : 'Nos pondremos en contacto contigo pronto.'}</p>
               <button className="cf-btn" onClick={() => setStatus('idle')}>Enviar otro mensaje</button>
             </div>
           ) : (
@@ -228,19 +244,20 @@ export default function ContactForm() {
               </div>
 
               <div className="cf-row">
-                <div className="cf-field">
+                <div className={`cf-field ${isApob ? 'cf-field--full' : ''}`}>
                   <span className="cf-field-ico"><Icon name="grid" /></span>
                   <div className="cf-field-main">
-                    <label htmlFor="cf-services">Servicio de interés *</label>
+                    <label htmlFor="cf-services">{isApob ? '¿Qué te gustaría hacer? *' : 'Servicio de interés *'}</label>
                     <select id="cf-services" name="services"
                       value={fields.services} onChange={e => set('services', e.target.value)}
                       className={errors.services ? 'cf-input--error' : ''}>
                       <option value="" disabled>Selecciona una opción</option>
-                      {SERVICES_OPTIONS.map(s => <option key={s} value={s}>{s}</option>)}
+                      {serviceOptions.map(s => <option key={s} value={s}>{s}</option>)}
                     </select>
                     {errors.services && <span className="cf-field-error">{errors.services}</span>}
                   </div>
                 </div>
+                {!isApob && (
                 <div className="cf-field">
                   <span className="cf-field-ico"><Icon name="dollar" /></span>
                   <div className="cf-field-main">
@@ -254,6 +271,7 @@ export default function ContactForm() {
                     {errors.budget && <span className="cf-field-error">{errors.budget}</span>}
                   </div>
                 </div>
+                )}
               </div>
 
               <div className="cf-field cf-field--full">
@@ -264,7 +282,7 @@ export default function ContactForm() {
                     <span className="cf-char-count">{fields.message.trim().length}/{MIN_MSG}</span>
                   </label>
                   <textarea id="cf-message" name="message" rows={5}
-                    placeholder="Cuéntanos qué necesitas, qué problema quieres resolver..."
+                    placeholder={isApob ? '¿Para quién es la clase o charla? ¿Qué tema te gustaría aprender? ¿Tienes una fecha estimada?' : 'Cuéntanos qué necesitas, qué problema quieres resolver...'}
                     value={fields.message} onChange={e => set('message', e.target.value)}
                     className={errors.message ? 'cf-input--error' : ''} />
                   {errors.message && <span className="cf-field-error">{errors.message}</span>}
