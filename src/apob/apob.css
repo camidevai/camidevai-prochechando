@@ -9,3 +9,32 @@
 .ap-hero-cover-fallback span{font-size:9px;font-weight:800;letter-spacing:1.4px;color:#f4c9f0}
 .ap-hero-cover-fallback strong{margin:18px 0;font-size:clamp(17px,2.4vw,25px);line-height:1.2}
 .ap-hero-cover-fallback small{font-size:10px;letter-spacing:1px;font-weight:700;color:#fce5fb}
+
+
+/* Contacto para quienes llegan desde las guías APOB */
+.ap-hero-contact-link{
+  display:inline-flex;align-items:center;margin-top:19px;
+  color:#6040ac!important;font-size:12px;font-weight:700;
+  text-decoration:underline!important;text-underline-offset:4px;
+}
+.ap-hero-contact-link:hover{color:#422c85!important}
+.apob-page .cf-section--apob{
+  background:linear-gradient(180deg,#f7f4ff 0%,#fff 100%);
+  padding:85px 24px 64px;scroll-margin-top:15px;
+}
+.apob-page .cf-section--apob .s-container{max-width:1120px}
+.apob-page .cf-section--apob .cf-title{
+  font-family:Montserrat,sans-serif;
+  font-size:clamp(2rem,3.2vw,2.8rem);
+}
+.apob-page .cf-section--apob .cf-kicker{font-size:11px;letter-spacing:1.2px}
+.apob-page .cf-section--apob .cf-lead{line-height:1.6}
+.apob-page .cf-section--apob .cf-formwrap{
+  box-shadow:0 24px 60px -36px rgba(82,49,145,.42);
+}
+@media(max-width:720px){
+  .apob-page .cf-section--apob{padding:57px 20px 45px}
+  .apob-page .cf-section--apob .cf-title{font-size:2.05rem}
+  .apob-page .cf-section--apob .cf-formwrap{padding:24px 18px}
+  .ap-hero-contact-link{margin-top:15px;font-size:11px}
+}
