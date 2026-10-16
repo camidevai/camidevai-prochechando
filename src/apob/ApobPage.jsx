@@ -11,10 +11,10 @@ const folder = 'https://drive.google.com/drive/folders/1DeTZjeO4HDFXhQj6th7mqZxr
 const dateLabel = (date) => new Intl.DateTimeFormat('es-CL', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(date))
 
 function GuideCard({ guide, index }) {
-  const [failed, setFailed] = useState(false)
+  const [cover, setCover] = useState('local')
   return <article className="ap-guide">
     <a className="ap-guide-cover" href={guide.url} target="_blank" rel="noopener noreferrer" aria-label={`Abrir guía: ${guide.title}`}>
-      {!failed ? <img src={asset(`apob/${guide.id}.webp`)} alt={`Portada de ${guide.title}`} loading={index < 3 ? 'eager' : 'lazy'} width="600" height="850" onError={() => setFailed(true)} /> : <span className="ap-cover-fallback">APOB<span>{guide.title}</span></span>}
+      {cover !== 'fallback' ? <img src={cover === 'local' ? asset(`apob/${guide.id}.webp`) : `https://drive.google.com/thumbnail?id=${encodeURIComponent(guide.id)}&sz=w600`} alt={`Portada de ${guide.title}`} loading={index < 3 ? 'eager' : 'lazy'} width="600" height="850" onError={() => setCover(current => current === 'local' ? 'drive' : 'fallback')} /> : <span className="ap-cover-fallback">APOB<span>{guide.title}</span></span>}
       <span className="ap-pdf">PDF ↗</span>
       <span className="ap-cover-cta">Ver guía paso a paso ↗</span>
     </a>
