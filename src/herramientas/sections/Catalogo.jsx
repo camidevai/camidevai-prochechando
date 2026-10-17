@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useFilteredTools } from '../useTools'
 import ToolCard from '../ToolCard'
 
@@ -42,6 +42,16 @@ export default function Catalogo({ tools, categories, loading, error }) {
   const [category, setCategory] = useState('Todas')
   const [sort, setSort] = useState('popular')
   const [visible, setVisible] = useState(PAGE_SIZE)
+
+  useEffect(() => {
+    const selectPath = (event) => {
+      setCategory(event.detail)
+      setQuery('')
+      setVisible(PAGE_SIZE)
+    }
+    window.addEventListener('tools:filter', selectPath)
+    return () => window.removeEventListener('tools:filter', selectPath)
+  }, [])
 
   const filtered = useFilteredTools(tools, query, category)
   const sorted = useMemo(() => sortTools(filtered, sort), [filtered, sort])

@@ -5,10 +5,11 @@ import Prochi from '../Prochi'
 
 const SECTIONS = [
   { label: 'Inicio',       id: 'tp-hero'     },
-  { label: 'Nosotros',     id: 'tp-nosotros' },
+  { label: 'Qué necesitas', id: 'tp-rutas' },
   { label: 'Favoritas',    id: 'tp-top5'     },
   { label: 'Herramientas', id: 'tp-catalogo' },
   { label: 'Aprende',      id: 'tp-educacion' },
+  { label: 'Nosotros',     id: 'tp-nosotros' },
 ]
 
 const scrollTo = (id) =>

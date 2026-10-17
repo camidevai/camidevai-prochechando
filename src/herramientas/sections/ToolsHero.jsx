@@ -33,28 +33,19 @@ export default function ToolsHero({ total }) {
         </span>
 
         <h1 className="tp-hero__title">
-          Las mejores herramientas de <span className="tp-hl">Inteligencia Artificial</span>,
-          en un solo lugar
+          ¿Qué quieres lograr hoy con <span className="tp-hl">inteligencia artificial?</span>
         </h1>
 
         <p className="tp-hero__sub">
-          Recopilamos, probamos y curamos las herramientas de IA más útiles del mercado para que
-          descubras cuáles valen la pena. Y cuando quieras llevar la IA a tu empresa,
-          estamos aquí para construirla contigo.
+          Busca herramientas por lo que necesitas hacer. Encuentra videotutoriales en español,
+          ideas para comenzar y formas de aplicar la IA en tu trabajo o negocio.
         </p>
 
         <div className="tp-hero__actions">
-          <Link to="/" className="tp-btn tp-btn--primary tp-btn--lg">
-            Conoce nuestros servicios
-            <ArrowIcon />
-          </Link>
-          <button
-            className="tp-btn tp-btn--ghost tp-btn--lg"
-            onClick={() => scrollTo('tp-catalogo')}
-          >
-            Explorar herramientas
-            <DownIcon />
+          <button className="tp-btn tp-btn--primary tp-btn--lg" onClick={() => scrollTo('tp-rutas')}>
+            Encuentra tu herramienta <DownIcon />
           </button>
+          <Link to="/" className="tp-btn tp-btn--ghost tp-btn--lg">Soluciones para empresas <ArrowIcon /></Link>
         </div>
       </div>
     </header>

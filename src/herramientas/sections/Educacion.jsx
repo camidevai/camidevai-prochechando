@@ -88,8 +88,8 @@ export default function Educacion() {
             Aprende <span className="svc-hl">Inteligencia Artificial</span>
           </h2>
           <p className="svc-intro">
-            No solo listamos herramientas: te enseñamos a usarlas. Cursos, guías y recursos
-            gratuitos para que la IA trabaje para ti.
+            Además de descubrir herramientas, puedes aprender a usarlas con videos
+            y guías prácticas. Empieza por un proyecto concreto y sigue avanzando.
           </p>
         </header>
 
@@ -107,13 +107,17 @@ export default function Educacion() {
           ))}
         </div>
 
-        {/* Material en vivo desde Google Drive */}
+        <div className="tx-featured-guide">
+          <div><span>LABORATORIO CREATIVO</span><h3>¿Quieres crear videos con IA?</h3><p>Explora las guías de CamiDevAI organizadas por ideas y con instrucciones paso a paso.</p></div>
+          <Link to="/apob" className="tp-btn tp-btn--primary">Explorar guías APOB ↗</Link>
+        </div>
+        {/* Material complementario en Drive */}
         <div id="tp-tutoriales" className="tp-tutoriales">
           <div className="tp-tutoriales__head">
             <h3 className="tp-tutoriales__title">Material de tutoriales</h3>
             <p className="tp-tutoriales__sub">
-              Contenido cargado directamente desde nuestras carpetas de Google Drive:
-              se actualiza solo cada vez que abres esta página.
+              Vista de las carpetas públicas de Drive. Para explorar guías APOB por proyecto,
+              utiliza nuestra biblioteca organizada de arriba.
             </p>
           </div>
 

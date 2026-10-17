@@ -26,12 +26,10 @@ export default function CtaFinal() {
           e implementamos soluciones de inteligencia artificial a la medida de tu negocio.
         </p>
 
-        <Link to="/" className="tp-final__btn">
-          Conoce nuestros servicios
-          <ArrowIcon />
-        </Link>
-
-        <p className="tp-final__note">Asesoría inicial sin costo · Respuesta en 24 h</p>
+        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2uz1JFoc9bKbUpVzeIlg9eFnUKXaBtydshlgQQDQPHMQzLc1I-vm4bvW6GK0zo-gGcH4spWo3l" className="tp-final__btn" target="_blank" rel="noopener noreferrer">
+          Consultar proyecto · US$20 <ArrowIcon />
+        </a>
+        <p className="tp-final__note">También puedes escribirnos sin costo desde el <Link to="/">sitio principal</Link>.</p>
       </div>
     </section>
   )

@@ -9,6 +9,8 @@ import ToolsNav from './ToolsNav'
 import ToolsHero from './sections/ToolsHero'
 import QuienesSomos from './sections/QuienesSomos'
 import TopFive from './sections/TopFive'
+import ToolPaths from './sections/ToolPaths'
+import './tools-overhaul.css'
 import Catalogo from './sections/Catalogo'
 import Educacion from './sections/Educacion'
 import CtaFinal from './sections/CtaFinal'
@@ -29,16 +31,13 @@ export default function HerramientasPage() {
       <main>
         <ToolsHero total={tools.length} />
 
-        <div className="s-divider" />
-        <QuienesSomos />
-
+        <ToolPaths />
         <TopFive tools={tools} />
-
         <Catalogo tools={tools} categories={categories} loading={loading} error={error} />
-
         <div className="s-divider" />
         <Educacion />
-
+        <div className="s-divider" />
+        <QuienesSomos />
         <CtaFinal />
       </main>
 
