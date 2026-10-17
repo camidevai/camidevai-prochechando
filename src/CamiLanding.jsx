@@ -56,20 +56,13 @@ export default function CamiLanding() {
         <div className="cam-shell cam-hero__grid">
           <div className="cam-hero__copy">
             <div className="cam-eyebrow"><span className="cam-eyebrow__dot" /> CAMIDEVAI · IA SIN COMPLICACIONES</div>
-            <h1 id="cam-hero-title">Hagamos que la <span>inteligencia artificial</span> conecte con las personas.</h1>
+            <h1 id="cam-hero-title">Aprende, crea y transforma con <span>inteligencia artificial.</span></h1>
             <p className="cam-hero__intro">¡Hola! Soy <strong>Camila Bañares</strong>, ingeniera en Informática, creadora de contenido y cofundadora de Informatik-AI.</p>
-            <p className="cam-hero__description">Me encanta enseñar, compartir ideas y mostrar cómo la tecnología puede transformar lo que hacemos. ¿Creamos algo juntos?</p>
+            <p className="cam-hero__description">Aquí encontrarás herramientas, tutoriales, ideas creativas y soluciones para aplicar la IA. Elige por dónde empezar.</p>
 
             <div className="cam-hero__actions">
-              <a className="cam-btn cam-btn--primary" href={GENERAL_MEETING} target="_blank" rel="noopener noreferrer">
-                Invítame a colaborar <span aria-hidden="true">↗</span>
-              </a>
-              <a className="cam-btn cam-btn--outline" href="#colaboremos">
-                Mira cómo podemos trabajar
-              </a>
-              <a className="cam-btn cam-btn--outline" href="https://www.cchia.cl/" target="_blank" rel="noopener noreferrer">
-                Únete a la Cámara Chilena de IA <span aria-hidden="true">↗</span>
-              </a>
+              <a className="cam-btn cam-btn--primary" href="#explora">Explorar recursos de IA <span aria-hidden="true">↓</span></a>
+              <a className="cam-btn cam-btn--outline" href="#colaboremos">Trabajemos juntos <span aria-hidden="true">↗</span></a>
             </div>
             <div className="cam-hero__tags" aria-label="Áreas de trabajo">
               <span>Charlas</span><span>Capacitaciones</span><span>Contenido para marcas</span><span>Proyectos IA</span>
@@ -102,6 +95,13 @@ export default function CamiLanding() {
         </div>
       </section>
 
+    </>
+  )
+}
+
+export function Collaborations() {
+  return (
+    <>
       <section id="colaboremos" className="cam-offers" aria-labelledby="cam-offers-title">
         <div className="cam-shell">
           <div className="cam-section-head">

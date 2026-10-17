@@ -5,14 +5,12 @@ import Prochi from './Prochi'
 
 const NAV_LINKS = [
   { label: 'Inicio', id: 'inicio' },
-  { label: 'Charlas y cursos', id: 'colaboremos' },
-  { label: 'Informatik-AI', id: 'servicios' },
-  { label: 'Equipo', id: 'equipo' },
-  { label: 'Herramientas', to: '/herramientas' },
-  { label: 'Guías APOB', to: '/apob' },
+  { label: 'Aprende IA', to: '/herramientas' },
+  { label: 'Crea videos', to: '/apob' },
+  { label: 'Charlas y marcas', id: 'colaboremos' },
+  { label: 'Soluciones IA', id: 'servicios' },
   { label: 'Contacto', id: 'formulario' },
 ]
-
 const scrollTo = (id) =>
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
@@ -41,10 +39,10 @@ export default function StickyNav() {
       <div className="snav-inner">
 
         {/* Marca */}
-        <span className="snav-brand" onClick={() => scrollTo('inicio')}>
+        <button type="button" className="snav-brand" onClick={() => scrollTo('inicio')}>
           <Prochi size={26} animated={false} className="snav-brand__logo" />
           CamiDevAI<b className="snav-brand-sep">✦</b>
-        </span>
+        </button>
 
         {/* Links desktop */}
         <nav className="snav-links" aria-label="Navegación principal">

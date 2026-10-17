@@ -3,7 +3,9 @@ import './App.css'
 import './sections.css'
 import StickyNav from './StickyNav'
 import FloatBtn from './FloatBtn'
-import CamiLanding from './CamiLanding'
+import CamiLanding, { Collaborations } from './CamiLanding'
+import HomeExperience from './HomeExperience'
+import './home-experience.css'
 import Servicios from './Servicios'
 import Proceso from './Proceso'
 import Elegirnos from './Elegirnos'
@@ -23,7 +25,7 @@ export default function App() {
     return () => window.removeEventListener('goto:contacto', handler)
   }, [])
 
-  const SECTION_IDS = ['servicios', 'proceso', 'elegirnos', 'contacto']
+  const SECTION_IDS = ['explora', 'colaboremos', 'servicios', 'formulario']
   const scrollToContent = (tabIdx) => {
     const id = SECTION_IDS[tabIdx] ?? 'servicios'
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -37,15 +39,17 @@ export default function App() {
       {/* ── Hero ── */}
       <CamiLanding />
 
-      {/* ── Contenido ── */}
+      <HomeExperience />
       <div className="page-content">
-        <section id="equipo"><Team /></section>
+        <Collaborations />
         <div className="s-divider" />
         <section id="servicios"><Servicios /></section>
         <div className="s-divider" />
+        <section id="elegirnos"><Elegirnos /></section>
+        <div className="s-divider" />
         <section id="proceso"><Proceso /></section>
         <div className="s-divider" />
-        <section id="elegirnos"><Elegirnos /></section>
+        <section id="equipo"><Team /></section>
         <div className="s-divider" />
         <section id="alianzas"><Alianzas /></section>
         <div className="s-divider" />
@@ -58,10 +62,10 @@ export default function App() {
       <footer className="site-footer">
         <nav className="site-footer__shortcuts">
           {[
-            { label: 'Servicios',         idx: 0 },
-            { label: 'Proceso',           idx: 1 },
-            { label: 'Por qué elegirnos', idx: 2 },
-            { label: 'Contacto',          idx: 3 },
+            { label: 'Aprende y crea', idx: 0 },
+            { label: 'Charlas y cursos', idx: 1 },
+            { label: 'Soluciones IA', idx: 2 },
+            { label: 'Contacto', idx: 3 },
           ].map(({ label, idx }) => (
             <button
               key={idx}

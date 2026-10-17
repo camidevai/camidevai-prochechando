@@ -23,6 +23,7 @@ export default function Alianzas() {
           <span className="s-kicker">Vínculo institucional</span>
           <h2 className="s-title">Cámara Chilena de Inteligencia Artificial</h2>
           <p className="ali-sub">Impulsamos la educación y el desarrollo de la inteligencia artificial desde nuestra participación en CCHIA.</p>
+          <a className="hx-institution-link" href="https://www.cchia.cl/" target="_blank" rel="noopener noreferrer">Conoce la Cámara Chilena de IA y cómo participar ↗</a>
         </header>
       </div>
 

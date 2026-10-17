@@ -103,6 +103,7 @@ export default function ContactForm({ variant = 'general' }) {
     const e = {}
     if (!fields.user_name.trim())                        e.user_name  = 'El nombre es obligatorio'
     if (!fields.user_email.trim())                       e.user_email = 'El email es obligatorio'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.user_email.trim())) e.user_email = 'Introduce un correo válido'
     if (!fields.services)                                e.services   = 'Selecciona un servicio'
     if (fields.message.trim().length < MIN_MSG)          e.message    = `Mínimo ${MIN_MSG} caracteres (faltan ${Math.max(0, MIN_MSG - fields.message.trim().length)})`
     return e

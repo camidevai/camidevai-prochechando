@@ -30,13 +30,6 @@ function Icon({ name }) {
   )
 }
 
-const BENCH = [
-  { icon: 'bolt',   title: 'Velocidad de entrega',      desc: 'Entregamos hasta 3 veces más rápido que el desarrollo tradicional.', stat: '3×',   statLabel: 'más rápido',  them: 'Desarrollo tradicional', us: 100, themPct: 33 },
-  { icon: 'dollar', title: 'Costo operativo',           desc: 'Optimizamos recursos y procesos reduciendo costos significativamente.', stat: '40%',  statLabel: 'menos costo', them: 'Metodología clásica',    us: 100, themPct: 58 },
-  { icon: 'cpu',    title: 'IA aplicada en producción', desc: 'Implementamos modelos reales probados en entornos reales.',         stat: 'IA',   statLabel: 'real',        them: 'Demos o prototipos',     us: 100, themPct: 25 },
-  { icon: 'trend',  title: 'Adaptación al negocio',     desc: 'Soluciones flexibles que se adaptan y crecen junto a tu empresa.',  stat: '100%', statLabel: 'a medida',    them: 'Solución genérica',      us: 100, themPct: 45 },
-]
-
 const MINI = [
   { icon: 'target', title: 'Resultados medibles',   text: 'KPIs claros y seguimiento continuo.' },
   { icon: 'shield', title: 'Tecnología confiable',  text: 'Arquitectura robusta y escalable.' },
@@ -73,36 +66,13 @@ export default function Elegirnos() {
       <div className="s-container">
         <header className="s-header">
           <span className="s-kicker">Por qué elegirnos</span>
-          <h2 className="s-title">Resultados que <span className="eli-hl">puedes ver</span></h2>
-          <p className="eli-sub">Impactos medibles que transforman tu negocio con inteligencia real.</p>
+          <h2 className="s-title">Tecnología que <span className="eli-hl">crece contigo</span></h2>
+          <p className="eli-sub">Desarrollamos soluciones a medida, con criterios claros de calidad, seguridad y mantenimiento.</p>
         </header>
 
         {/* ── Panel de benchmark ── */}
         <div className="eli-panel">
-          {BENCH.map(b => (
-            <div key={b.title} className="eli-row">
-              <div className="eli-row-head">
-                <span className="eli-row-ico"><Icon name={b.icon} /></span>
-                <div>
-                  <strong className="eli-row-title">{b.title}</strong>
-                  <p className="eli-row-desc">{b.desc}</p>
-                </div>
-              </div>
-
-              <div className="eli-bars">
-                <span className="eli-bars-name">prochechando.cl</span>
-                <div className="eli-track"><div className="eli-fill" style={{ width: `${b.us}%` }} /></div>
-                <div className="eli-track eli-track--them"><div className="eli-fill eli-fill--them" style={{ width: `${b.themPct}%` }} /></div>
-                <span className="eli-bars-them">{b.them}</span>
-              </div>
-
-              <div className="eli-stat">
-                <b>{b.stat}</b>
-                <span>{b.statLabel}</span>
-              </div>
-            </div>
-          ))}
-
+          <p className="eli-trust-intro">Tecnología diseñada para necesidades reales, con calidad, mantenimiento y transparencia.</p>
           <div className="eli-mini-row">
             {MINI.map(m => (
               <div key={m.title} className="eli-mini">
