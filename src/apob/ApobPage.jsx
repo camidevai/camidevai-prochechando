@@ -5,8 +5,16 @@ import ContactForm from '../ContactForm'
 import '../sections.css'
 import guides from './guides.json'
 import './apob.css'
+import './apob-overhaul.css'
 
 const categories = ['Todas', 'Primeros pasos', 'Transformaciones', 'Cine e historias', 'Efectos y trends', 'Imagen y estilo', 'Publicidad y 3D']
+const featured = [guides[0], guides[1], guides.find(g => g.category === 'Primeros pasos')].filter(Boolean)
+const starterCategories = [
+  { icon: '🚀', label: 'Empieza desde cero', value: 'Primeros pasos' },
+  { icon: '🎬', label: 'Crea historias', value: 'Cine e historias' },
+  { icon: '✨', label: 'Transfórmate', value: 'Transformaciones' },
+  { icon: '⚡', label: 'Haz efectos virales', value: 'Efectos y trends' },
+]
 const normalize = (text) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 const asset = (path) => `${import.meta.env.BASE_URL}${path}`
 const coverAsset = (guide) => asset(`apob/${guide.id}.${guide.coverExt || 'webp'}`)
@@ -56,8 +64,27 @@ export default function ApobPage() {
     <header className="ap-nav"><Link className="ap-brand" to="/">CamiDevAI<span>✦</span></Link><nav aria-label="Navegación de guías"><Link to="/">Inicio</Link><Link to="/herramientas">Herramientas</Link><a className="ap-nav-active" href="#guias">Guías APOB</a><a href="#contacto-apob">Clases y charlas</a></nav><a className="ap-button ap-button-small" href="https://mega.apob.ai/Camidevai" target="_blank" rel="noopener noreferrer">Crear en APOB ↗</a></header>
     <main>
       <section className="ap-hero">
-        <div className="ap-hero-copy"><span className="ap-eyebrow"><span /> EL LABORATORIO CREATIVO DE CAMIDEVAI</span><h1>Tu próxima idea.<br />Un video <em>increíble.</em></h1><p>Te enseño cómo lo hice. Explora mis guías de APOB y crea tus propios videos con IA, paso a paso.</p><div className="ap-hero-actions"><a className="ap-button" href="#guias">Explorar las guías <span>↓</span></a><span className="ap-hero-note">{guides.length} guías PDF<br /><b>Ideas para poner en práctica</b></span></div><a className="ap-hero-contact-link" href="#contacto-apob">¿Quieres clases de IA o una charla? Escríbeme ↗</a><div className="ap-hero-meta"><span>01. Elige una idea</span><span>02. Sigue la guía</span><span>03. Dale tu estilo</span></div></div>
+        <div className="ap-hero-copy"><span className="ap-eyebrow"><span /> EL LABORATORIO CREATIVO DE CAMIDEVAI</span><h1>¿Viste mis videos?<br /><em>Así los hice.</em></h1><p>Aprende a crear escenas cinematográficas, transformaciones y efectos con IA. Elige una idea, descubre los prompts y dale tu propio estilo.</p><div className="ap-hero-actions"><a className="ap-button" href="#destacadas">Ver proyectos y guías <span>↓</span></a><span className="ap-hero-note">{guides.length} guías PDF<br /><b>Ideas para poner en práctica</b></span></div><a className="ap-hero-contact-link" href="#contacto-apob">¿Quieres clases de IA o una charla? Escríbeme ↗</a><div className="ap-hero-meta"><span>01. Elige una idea</span><span>02. Sigue la guía</span><span>03. Dale tu estilo</span></div></div>
         <div className="ap-hero-art" aria-hidden="true"><div className="ap-orbit" /><span className="ap-art-spark">✦</span><HeroCover className="ap-hero-cover ap-hero-cover-back" guide={guides[1]} /><HeroCover className="ap-hero-cover ap-hero-cover-front" guide={guides[0]} /><span className="ap-art-label">DE UNA IDEA A LA ACCIÓN <b>PROCHECHANDO ✦</b></span></div>
+      </section>
+      <section className="ap-quick-start" aria-labelledby="ap-start-title">
+        <div className="ap-quick-wrap"><span className="ap-eyebrow">EMPIEZA POR AQUÍ</span><h2 id="ap-start-title">¿Qué te gustaría crear hoy?</h2><p>No necesitas saber por dónde empezar. Elige una idea y encuentra su guía.</p>
+          <div className="ap-quick-grid">{starterCategories.map(c => <button type="button" key={c.value} onClick={() => { update('categoria', c.value); document.getElementById('guias')?.scrollIntoView({ behavior:'smooth' }) }}>
+            <span aria-hidden="true">{c.icon}</span><strong>{c.label}</strong><span aria-hidden="true">↗</span>
+          </button>)}</div>
+        </div>
+      </section>
+      <section className="ap-featured" id="destacadas" aria-labelledby="ap-featured-title">
+        <div className="ap-featured-head"><div><span className="ap-eyebrow">IDEAS PARA INSPIRARTE</span><h2 id="ap-featured-title">De una idea a tu propio video ✦</h2><p>Tres proyectos para inspirarte antes de explorar la biblioteca completa.</p></div><a href="#guias">Todas las guías ↓</a></div>
+        <div className="ap-featured-grid">{featured.map((g,i) => <article className="ap-feature-card" key={g.id}>
+          <a href={g.url} target="_blank" rel="noopener noreferrer" className="ap-feature-image"><img src={coverAsset(g)} alt={`Portada de ${g.title}`} loading="lazy" /></a>
+          <div className="ap-feature-body"><span>{i === 2 ? 'PARA COMENZAR' : g.category}</span><h3>{g.title}</h3><p>{g.description}</p><a href={g.url} target="_blank" rel="noopener noreferrer">Aprender a hacerlo ↗</a></div>
+        </article>)}</div>
+        <div className="ap-three-steps"><h3>Tu primera creación en tres pasos</h3><ol>
+          <li><strong>Elige una idea</strong><span>Encuentra el estilo que quieres recrear.</span></li>
+          <li><strong>Sigue la guía</strong><span>Prepara imágenes, prompts y escenas.</span></li>
+          <li><strong>Dale tu toque</strong><span>Anima en APOB y comparte tu resultado.</span></li>
+        </ol></div>
       </section>
       <section className="ap-library" id="guias" aria-labelledby="ap-library-title"><div className="ap-section-head"><div><span className="ap-eyebrow">APRENDE. EXPERIMENTA. CREA.</span><h2 id="ap-library-title">Encuentra tu próxima creación<span>✦</span></h2></div><a className="ap-drive-link" href={folder} target="_blank" rel="noopener noreferrer">Ver carpeta en Drive ↗</a></div>
         <div className="ap-toolbar"><div className="ap-search"><span aria-hidden="true">⌕</span><label className="ap-sr" htmlFor="ap-search">Buscar guías</label><input id="ap-search" type="search" value={query} onChange={e => update('q', e.target.value)} placeholder="Busca una idea: transformación, cine, 3D…" /></div><div className="ap-sort"><label htmlFor="ap-sort">Ordenar por</label><select id="ap-sort" value={sort} onChange={e => update('orden', e.target.value)}><option value="recientes">Más recientes</option><option value="antiguas">Más antiguas</option><option value="az">Título: A–Z</option></select></div></div>
@@ -68,6 +95,6 @@ export default function ApobPage() {
       <ContactForm variant="apob" />
       <section className="ap-bottom-cta"><span>¿YA TIENES UNA IDEA?</span><h2>Ahora te toca crear a ti.</h2><p>Abre la guía que más te guste y dale tu propio giro.</p><a className="ap-button" href="https://mega.apob.ai/Camidevai" target="_blank" rel="noopener noreferrer">Abrir APOB con CamiDevAI ↗</a></section>
     </main>
-    <footer className="ap-footer"><Link className="ap-brand" to="/">CamiDevAI<span>✦</span></Link><p>Procesando y echándole ganas al mismo tiempo.</p><a href={folder} target="_blank" rel="noopener noreferrer">Guías originales en Drive ↗</a><small>© {new Date().getFullYear()} CamiDevAI · Guías paso a paso</small></footer>
+    <footer className="ap-footer"><Link to="/herramientas" className="ap-browse-tools">Explora otras herramientas IA ↗</Link><Link className="ap-brand" to="/">CamiDevAI<span>✦</span></Link><p>Procesando y echándole ganas al mismo tiempo.</p><a href={folder} target="_blank" rel="noopener noreferrer">Guías originales en Drive ↗</a><small>© {new Date().getFullYear()} CamiDevAI · Guías paso a paso</small></footer>
   </div>
 }
