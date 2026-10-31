@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="850" viewBox="0 0 600 850" role="img" aria-label="Portada de la guía APOB El espejo de Merlina, CamiDevAI">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#050814"/><stop offset=".48" stop-color="#0c1530"/><stop offset="1" stop-color="#231234"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2e607d"/><stop offset=".4" stop-color="#161d40"/><stop offset=".78" stop-color="#53245e"/><stop offset="1" stop-color="#0a1c2a"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe0a0"/><stop offset=".48" stop-color="#b68b52"/><stop offset="1" stop-color="#eccb91"/></linearGradient>
+  <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#c7ffff"/><stop offset="1" stop-color="#4dd9ee"/></linearGradient>
+  <radialGradient id="halo"><stop stop-color="#8e5bc1" stop-opacity=".8"/><stop offset="1" stop-color="#8e5bc1" stop-opacity="0"/></radialGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+  <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".8"/></filter>
+</defs>
+<rect width="600" height="850" fill="url(#bg)"/>
+<circle cx="300" cy="435" r="280" fill="url(#halo)" opacity=".45"/>
+<g stroke="#46e7ef" stroke-opacity=".15" fill="none"><path d="M0 255H132M467 255H600M0 580H94M520 580H600" stroke-width="3"/><path d="M36 205V685M560 205V685" stroke-dasharray="7 14"/></g>
+<g font-family="Arial,Helvetica,sans-serif" text-anchor="middle">
+  <text x="300" y="55" fill="#65e5ed" font-size="22" font-weight="900" letter-spacing="5">CAMIDEVAI × APOB</text>
+  <text x="300" y="113" fill="#ffffff" font-size="48" font-weight="900">EL ESPEJO</text>
+  <text x="300" y="173" fill="url(#cyan)" font-size="56" font-weight="900">DE MERLINA</text>
+  <text x="300" y="213" fill="#c8d3eb" font-size="19" font-weight="700" letter-spacing="2">ESPECIAL HALLOWEEN · 15 SEGUNDOS</text>
+</g>
+<g filter="url(#shadow)">
+  <path d="M176 682V348Q176 260 300 249Q424 260 424 348V682Z" fill="#100f25" stroke="#4d355b" stroke-width="24"/>
+  <path d="M176 682V348Q176 260 300 249Q424 260 424 348V682Z" fill="url(#glass)" stroke="url(#gold)" stroke-width="11"/>
+  <path d="M194 665V351Q194 286 300 276Q406 286 406 351V665Z" fill="none" stroke="#edd3ac" stroke-width="2" opacity=".8"/>
+  <path d="M300 256L300 235M217 281L199 265M382 281L401 265" stroke="#d3b075" stroke-width="6" stroke-linecap="round"/>
+  <path d="M295 310Q318 403 263 476Q308 479 332 539Q314 602 344 654" stroke="#72f5ff" stroke-width="6" fill="none" opacity=".56" filter="url(#glow)"/>
+  <path d="M295 310Q318 403 263 476Q308 479 332 539Q314 602 344 654" stroke="#a2f8ff" stroke-width="2.5" fill="none" opacity=".8"/>
+  <g transform="translate(234 330)">
+    <path d="M18 126Q-12 84 4 31Q14-23 74-24Q141-17 135 53L124 137Z" fill="#07101d"/>
+    <ellipse cx="67" cy="77" rx="43" ry="60" fill="#ccb3ad"/>
+    <path d="M18 70Q2-3 69-16Q132-18 128 68Q100 47 99 19Q79 42 18 70Z" fill="#08101b"/>
+    <path d="M21 111Q-11 158 -10 250H143Q150 156 113 112Z" fill="#090d17" stroke="#263448" stroke-width="3"/>
+    <path d="M24 113Q17 164 20 250M111 113Q120 165 120 250" stroke="#111927" stroke-width="22" stroke-linecap="round"/>
+    <path d="M40 72L56 69M80 69L99 72" stroke="#251d28" stroke-width="3"/>
+    <ellipse cx="49" cy="74" rx="5" ry="4" fill="#72d8b6"/><ellipse cx="90" cy="74" rx="5" ry="4" fill="#72d8b6"/>
+    <path d="M53 108Q67 116 82 108" stroke="#654451" stroke-width="3" fill="none"/>
+  </g>
+</g>
+<g fill="none" stroke="#84edff" stroke-linecap="round"><path d="M139 516Q166 491 202 512" stroke-width="6"/><path d="M399 481Q437 461 473 484" stroke-width="4" opacity=".65"/></g>
+<g font-family="Arial,Helvetica,sans-serif" text-anchor="middle">
+  <rect x="72" y="713" width="456" height="83" rx="16" fill="#091226" stroke="#3bc9df" stroke-opacity=".45"/>
+  <text x="300" y="746" fill="#ffffff" font-size="25" font-weight="900">GUÍA PASO A PASO</text>
+  <text x="300" y="778" fill="#8ff0f7" font-size="18" font-weight="700">4 ESCENAS · IMAGEN + ANIMACIÓN</text>
+  <text x="300" y="829" fill="#8f9ebc" font-size="15" letter-spacing="2">EFECTOS CON INTELIGENCIA ARTIFICIAL</text>
+</g>
+</svg>
